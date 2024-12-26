@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>动态下划线效果</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 基本的链接样式 */
+        .dynamic-underline {
+            position: relative;
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 18px;
+        }
+
+        /* 伪元素实现下划线效果 */
+        .dynamic-underline::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #007BFF;
+            transition: width 0.3s ease;
+        }
+
+        /* 鼠标悬停时，下划线宽度变为100% */
+        .dynamic-underline:hover::after {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <a href="#" class="dynamic-underline">鼠标悬停时有动态下划线</a>
+    <a href="#" class="dynamic-underline">鼠标悬停时显示动态下划线</a>
 </body>
 </html>
